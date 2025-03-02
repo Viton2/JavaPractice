@@ -1,3 +1,5 @@
+package Practicing;
+
 public class BucketSimulation {
 
     private static final int BUCKET_CAPACITY = 100;

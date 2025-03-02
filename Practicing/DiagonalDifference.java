@@ -1,4 +1,5 @@
-import java.util.ArrayList;
+package Practicing;
+
 import java.util.List;
 
 public class DiagonalDifference {

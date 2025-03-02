@@ -1,3 +1,5 @@
+package Practicing;
+
 import java.util.Collections;
 
 public class StaircaseDetail {
