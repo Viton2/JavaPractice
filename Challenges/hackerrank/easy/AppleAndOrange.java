@@ -1,4 +1,4 @@
-package Challenges.hackerrank;
+package Challenges.hackerrank.easy;
 
 import java.util.ArrayList;
 import java.util.List;
