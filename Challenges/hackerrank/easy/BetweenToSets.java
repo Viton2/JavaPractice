@@ -35,12 +35,12 @@ Returns
 */
 
     // Função para calcular o MMC de dois números
-    public static int lcm(int a, int b) {
-        return (a * b) / gcd(a, b);
+    public static int calcularMMC(int a, int b) {
+        return (a * b) / calcularMDC(a, b);
     }
 
     // Função para calcular o MDC de dois números (usando o Algoritmo de Euclides)
-    public static int gcd(int a, int b) {
+    public static int calcularMDC(int a, int b) {
         while (b != 0) {
             int temp = b;
             b = a % b;
@@ -54,13 +54,13 @@ Returns
         // Calcula o MMC de todos os elementos de a
         int lcmA = a.get(0);
         for (int num : a) {
-            lcmA = lcm(lcmA, num);
+            lcmA = calcularMMC(lcmA, num);
         }
 
         // Calcula o MDC de todos os elementos de b
         int gcdB = b.get(0);
         for (int num : b) {
-            gcdB = gcd(gcdB, num);
+            gcdB = calcularMDC(gcdB, num);
         }
 
         // Contar os múltiplos de lcmA que também são divisores de gcdB
