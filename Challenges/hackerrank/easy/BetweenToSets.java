@@ -34,12 +34,47 @@ Returns
 . int: the number of integers that are between the sets
 */
 
-    public static int getTotalX(List<Integer> a, List<Integer> b) {
-        // Write your code here
+    // Função para calcular o MMC de dois números
+    public static int lcm(int a, int b) {
+        return (a * b) / gcd(a, b);
+    }
 
+    // Função para calcular o MDC de dois números (usando o Algoritmo de Euclides)
+    public static int gcd(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+
+    // Função para encontrar quantos números estão entre os dois conjuntos
+    public static int getTotalX(List<Integer> a, List<Integer> b) {
+        // Calcula o MMC de todos os elementos de a
+        int lcmA = a.get(0);
+        for (int num : a) {
+            lcmA = lcm(lcmA, num);
+        }
+
+        // Calcula o MDC de todos os elementos de b
+        int gcdB = b.get(0);
+        for (int num : b) {
+            gcdB = gcd(gcdB, num);
+        }
+
+        // Contar os múltiplos de lcmA que também são divisores de gcdB
+        int count = 0;
+        for (int i = lcmA; i <= gcdB; i += lcmA) {
+            if (gcdB % i == 0) {
+                count++;
+            }
+        }
+
+        return count;
     }
 
     public static void main(String[] args) {
-
+        System.out.println(getTotalX(List.of(6, 2), List.of(24, 36)));
     }
 }
