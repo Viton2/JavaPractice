@@ -1,4 +1,4 @@
-package Practicing;
+package Practicing.algorithms;
 
 import java.util.Comparator;
 import java.util.List;

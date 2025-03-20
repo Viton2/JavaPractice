@@ -1,4 +1,4 @@
-package Practicing;
+package Practicing.algorithms;
 
 public class even_sum {
 
