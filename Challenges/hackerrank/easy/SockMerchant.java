@@ -32,11 +32,9 @@ Returns
         // Write your code here
         int result = 0;
         HashMap<Integer, Integer> map = new HashMap<>();
-
         for (int i = 0; i < n; i++) {
             map.put(ar.get(i), map.getOrDefault(ar.get(i), 0) + 1);
         }
-
         for (Integer integer : map.keySet()) {
             Integer value = map.get(integer);
             if (value % 2 == 0) {
@@ -45,7 +43,7 @@ Returns
             else {
                 result += value - 1 == 0 ? 0 : (value - 1)/2;
             }
-        };
+        }
         return result;
 
     }
