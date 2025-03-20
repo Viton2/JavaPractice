@@ -1,4 +1,4 @@
-package Practicing.testing;
+package Practicing.testing.lambda;
 
 @FunctionalInterface
 public interface Printable {
