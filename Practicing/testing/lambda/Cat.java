@@ -8,7 +8,8 @@ public class Cat implements Printable {
     public Cat() {
     }
 
-    public void print() {
-        System.out.println("Meow");
+    @Override
+    public String print(String prefix, String suffix) {
+        return prefix + "Meow" + suffix;
     }
 }
