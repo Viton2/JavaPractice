@@ -19,48 +19,52 @@ Example
 n = 5
 p = 3
 
-Using the diagram above, if the student wants to get to page 3, they open the book to page 1, flip 1 page and they
+Using the diagram above, if the student wants to get to page 3, they open the book to page 1, flip 1 page, and they
 are on the correct page. If they open the book to the last page, page 5, they turn 1 page and are at the correct
 page. Return 1.
 */
 
     public static int pageCount(int n, int p) {
-        int pageFlipsUpwards = 0;
-        int pageFlipsDownwards = 0;
-        int currentPage = 1;
-        boolean conditional = true;
-        if (p != 1 && p != n) {
-            while (conditional) {
-                if (currentPage % 2 != 0) {
-                    if (currentPage != p) {
-                        pageFlipsUpwards++;
-                    } else {
-                        conditional = false;
-                    }
-                } else if (currentPage == p) {
-                    conditional = false;
-                }
-                currentPage++;
-            }
-            conditional = true;
-            currentPage = n;
-            while (conditional) {
-                if (currentPage % 2 == 0) {
-                    if (currentPage != p) {
-                        pageFlipsDownwards++;
-                    } else {
-                        conditional = false;
-                    }
-                } else if (currentPage == p) {
-                    conditional = false;
-                }
-                currentPage--;
-            }
-        }
-        return Math.min(pageFlipsUpwards, pageFlipsDownwards);
+//        int pageFlipsUpwards = 0;
+//        int pageFlipsDownwards = 0;
+//        int currentPage = 1;
+//        boolean conditional = true;
+//        if (p != 1 && p != n) {
+//            while (conditional) {
+//                if (currentPage % 2 != 0) {
+//                    if (currentPage != p) {
+//                        pageFlipsUpwards++;
+//                    } else {
+//                        conditional = false;
+//                    }
+//                } else if (currentPage == p) {
+//                    conditional = false;
+//                }
+//                currentPage++;
+//            }
+//            conditional = true;
+//            currentPage = n;
+//            while (conditional) {
+//                if (currentPage % 2 == 0) {
+//                    if (currentPage != p) {
+//                        pageFlipsDownwards++;
+//                    } else {
+//                        conditional = false;
+//                    }
+//                } else if (currentPage == p) {
+//                    conditional = false;
+//                }
+//                currentPage--;
+//            }
+//        }
+//        return Math.min(pageFlipsUpwards, pageFlipsDownwards);
+
+        int fromFront = p / 2;
+        int fromBack = (n / 2) - (p / 2);
+        return Math.min(fromFront, fromBack);
     }
 
     public static void main(String[] args) {
-        System.out.println(pageCount(5, 4));
+        System.out.println(pageCount(6, 5));
     }
 }
