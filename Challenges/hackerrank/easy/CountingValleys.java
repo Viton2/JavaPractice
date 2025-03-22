@@ -6,7 +6,6 @@ public class CountingValleys {
         int valleysTraversed = 0;
 
 
-
         return valleysTraversed;
     }
 
